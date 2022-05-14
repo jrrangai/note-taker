@@ -28,7 +28,7 @@ app.get('/api/notes', (req, res) => {
 
 // add new notes/ route
 app.post('/api/notes', (req, res) => {
-    let notesArray =notesFile.notes;
+    let notesArray = notesFile.notes;
     // create unique ID for each note
     req.body.id = uniqid();
     // req.body is where incoming content will be
@@ -37,7 +37,7 @@ app.post('/api/notes', (req, res) => {
     // add new note to the dbJson and turn into string for page
     fs.writeFileSync(
         path.join(__dirname, './db/db.json'),
-        JSON.stringify({ notes: notesArray})
+        JSON.stringify({ notes: notesArray })
     );
     // send data to client server
     res.json(req.body)
@@ -45,6 +45,18 @@ app.post('/api/notes', (req, res) => {
     
 
 // delete notes
+app.delete('/api/notes/:notesID', (req,res) => {
+    let filtered = notesFile.notes.filter( function (note) {
+        if (note.id !== req.params.notesID) {
+            return note
+        }
+    })
+    fs.writeFileSync(
+        path.join(__dirname, './db/db.json'),
+        JSON.stringify({ notes: filtered})
+    )
+    res.json({ ok:true })
+})
 
 // dirname routes
 app.get('/', (req, res) => {

@@ -1,12 +1,1 @@
-{
-  "notes": [
-    { "title": "hi", "text": "lll", "id": "bfc11d78l33gnjnl" },
-    { "title": "bye", "text": "w", "id": "bfc1168gl33gnwis" },
-    { "title": "okie", "text": "Thanks", "id": "bfc11fmgl33gqnmv" },
-    {
-      "title": "Figure out how to delete",
-      "text": "CRUD ",
-      "id": "bfc19icl360ffiu"
-    }
-  ]
-}
+{"notes":[{"title":"bye","text":"w","id":"bfc1168gl33gnwis"}]}
