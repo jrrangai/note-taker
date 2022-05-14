@@ -23,16 +23,19 @@ app.get('/api/notes', (req, res) => {
     res.json(notesFile.notes);
 });
 
-// add new notes
+// add new notes/ route
 app.post('/api/notes', (req, res) => {
     let notesArray =notesFile.notes;
+    // create unique ID for each note
     req.body.id = uniqid();
     notesArray.push(req.body);
-    console.log(notesArray)
+    console.log(notesArray);
+    // add new note to the dbJson and turn into string for page
     fs.writeFileSync(
         path.join(__dirname, './db/db.json'),
         JSON.stringify({ notes: notesArray})
     )
+    // update code
     res.json(req.body)
 })
     

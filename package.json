@@ -1,0 +1,28 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^2.0.16",
+    "uniqid": "^5.4.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrrangai/note-taker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/jrrangai/note-taker/issues"
+  },
+  "homepage": "https://github.com/jrrangai/note-taker#readme"
+}
