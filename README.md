@@ -2,6 +2,7 @@
 #### AS A small business owner
 #### I WANT to be able to write and save notes
 #### SO THAT I can organize my thoughts and keep track of tasks I need to complete
+
 <details><summary> Description </summary>
   <h1> Description </h1>
   <ul>
@@ -22,3 +23,7 @@
   
 # Deployed Application: 
 https://fierce-mountain-22652.herokuapp.com/
+
+
+![Note-taker](https://user-images.githubusercontent.com/99766422/168447454-5e68ca53-25fd-4217-a1e4-e16ea5143f20.png)
+![Note-taker2](https://user-images.githubusercontent.com/99766422/168447458-c1bee012-1b3a-4b3c-9874-b7f314751126.png)
