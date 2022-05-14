@@ -7,6 +7,7 @@
 
 # Descrition: 
 <details>
+  <h1> Description </h1>
   <p>
 ## GIVEN a note-taking application
 ### WHEN I open the Note Taker
