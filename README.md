@@ -21,8 +21,7 @@
     <li> THEN that note appears in the right-hand column
     <li> WHEN I click on the Write icon in the navigation at the top of the page
     <li> THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
-   </ul>
+   </ul></details>
   
-  </details>
 # Deployed Application: 
 https://fierce-mountain-22652.herokuapp.com/
