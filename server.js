@@ -51,6 +51,7 @@ app.delete('/api/notes/:notesID', (req,res) => {
             return note
         }
     })
+    console.log(filtered);
     fs.writeFileSync(
         path.join(__dirname, './db/db.json'),
         JSON.stringify({ notes: filtered})
