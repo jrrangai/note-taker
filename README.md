@@ -8,8 +8,8 @@
 # Descrition: 
 <details>
   <h1> Description </h1>
-  <p>
-## GIVEN a note-taking application
+  <ul>
+    <li> GIVEN a note-taking application </li>
 ### WHEN I open the Note Taker
 #### THEN I am presented with a landing page with a link to a notes page
 ### WHEN I click on the link to the notes page
@@ -22,6 +22,7 @@
 #### THEN that note appears in the right-hand column
 ### WHEN I click on the Write icon in the navigation at the top of the page
 #### THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
-  </p>
+   </ul>
+  
   </details>
 # Deployed Application
