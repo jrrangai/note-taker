@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const uniqid = require('uniqid');
-let notesFile;
+let db = require('./db/db.json');
+var notesFile;
 
 // async way to read file 
 fs.readFile('./db/db.json', 'utf8', function (err, data) {
@@ -46,17 +47,24 @@ app.post('/api/notes', (req, res) => {
 
 // delete notes
 app.delete('/api/notes/:notesID', (req,res) => {
+    console.log('notesfile ', notesFile)
     let filtered = notesFile.notes.filter( function (note) {
         if (note.id !== req.params.notesID) {
             return note
         }
     })
-    console.log(filtered);
+    console.log('filtered ', filtered);
     fs.writeFileSync(
         path.join(__dirname, './db/db.json'),
-        JSON.stringify({ notes: filtered})
+        JSON.stringify({ notes: filtered }),
+        (err, res) => {
+            if (err) {
+                throw err
+            } 
+        },
+        res.send(filtered)
     )
-    res.json({ ok:true })
+    
 })
 
 // dirname routes
