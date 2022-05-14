@@ -3,19 +3,22 @@ const path = require('path');
 const uniqid = require('uniqid');
 let notesFile;
 
+// async way to read file 
 fs.readFile('./db/db.json', 'utf8', function (err, data) {
     notesFile = JSON.parse(data);
-})
+});
+
 const express = require('express');
 const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-// use app
+// parse incoming string or array data
 app.use(express.urlencoded({ extended: true}));
+// parse incoming JSON data
 app.use(express.json());
 
-// load css and javascript 
+// load css and javascript using middleware
 app.use(express.static('public'));
 
 // load saved notes
@@ -28,16 +31,17 @@ app.post('/api/notes', (req, res) => {
     let notesArray =notesFile.notes;
     // create unique ID for each note
     req.body.id = uniqid();
+    // req.body is where incoming content will be
     notesArray.push(req.body);
     console.log(notesArray);
     // add new note to the dbJson and turn into string for page
     fs.writeFileSync(
         path.join(__dirname, './db/db.json'),
         JSON.stringify({ notes: notesArray})
-    )
-    // update code
+    );
+    // send data to client server
     res.json(req.body)
-})
+});
     
 
 // delete notes
